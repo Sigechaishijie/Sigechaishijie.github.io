@@ -9,8 +9,8 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="Blog Title search page">
-<title>Blog Title - Tag</title>
+<meta name="description" content="思哥の博客 search page">
+<title>思哥の博客 - Tag</title>
 
 </head>
 <style>
@@ -58,7 +58,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             <path id="searchSVG" fill-rule="evenodd"></path>
         </svg>
     </div>
-    <a href="https://Sigechaishijie.github.io/blog.sige.com" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://Sigechaishijie.github.io/Blog" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
@@ -75,7 +75,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <nav class="SideNav"></nav>
 <div class="notFind" style="display:none;font-size:24px;margin:8px;">Not Find</div>
 </div>
-    <div id="footer">Copyright © <span id="year"></span><a href="https://Sigechaishijie.github.io/blog.sige.com"> Blog Title </a>
+    <div id="footer">Copyright © <span id="year"></span><a href="https://Sigechaishijie.github.io/Blog"> 思哥の博客 </a>
 <p>
 <span id="runday"></span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a>
 </p>
@@ -236,7 +236,7 @@ function setClassDisplay(label){
     let lists = document.getElementsByClassName("lists");
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     tagTitle.innerHTML="Tag #"+label;
-    document.title=label+" - Blog Title";
+    document.title=label+" - 思哥の博客";
     document.getElementsByClassName("subnav-search-input")[0].value='';
     if(label=="All"){
         for(let i = 0; i < lists.length; i++){lists[i].style.display='block';}
@@ -264,8 +264,8 @@ function searchShow(){
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     let searchInput = document.getElementsByClassName("subnav-search-input")[0].value;
     tagTitle.innerHTML="Search #"+searchInput;
-    if(searchInput==''){document.title="Search - Blog Title";}
-    else{document.title=searchInput+" - Blog Title";}
+    if(searchInput==''){document.title="Search - 思哥の博客";}
+    else{document.title=searchInput+" - 思哥の博客";}
     let a=0;
     window.location.hash="#"+(searchInput);
     for(let i = 0; i < lists.length; i++){
