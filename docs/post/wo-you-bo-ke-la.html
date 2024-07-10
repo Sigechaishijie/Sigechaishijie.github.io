@@ -13,7 +13,7 @@
 <meta property="og:title" content="我有博客啦">
 <meta property="og:description" content="这是我在博客发表的第一篇文章，大佬指教一下。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html">
+<meta property="og:url" content="https://Sigechaishijie.github.io/Blog.bak/post/wo-you-bo-ke-la.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/160098482?v=4&size=64">
 <title>我有博客啦</title>
 
@@ -48,13 +48,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="header">
 <h1 class="postTitle">我有博客啦</h1>
 <div class="title-right">
-    <a href="https://Sigechaishijie.github.io/Blog" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://Sigechaishijie.github.io/Blog.bak" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
     </a>
     
-    <a href="https://github.com/Sigechaishijie/Blog/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/Sigechaishijie/Blog.bak/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -77,7 +77,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="comments" id="comments"></div>
 
 </div>
-    <div id="footer">Copyright © <span id="year"></span><a href="https://Sigechaishijie.github.io/Blog"> 思哥の博客 </a>
+    <div id="footer">Copyright © <span id="year"></span><a href="https://Sigechaishijie.github.io/Blog.bak"> 思哥の博客 </a>
 <p>
 <span id="runday"></span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a>
 </p>
@@ -130,7 +130,11 @@ console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5p
 <script>
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
-
+cmButton=document.getElementById("cmButton");
+    span=document.createElement("span");
+    span.setAttribute("class","Counter");
+    span.innerHTML="1";
+    cmButton.appendChild(span);
 
 
 function openComments(){
@@ -143,7 +147,7 @@ function openComments(){
 
     script=document.createElement("script");
     script.setAttribute("src","https://utteranc.es/client.js");
-    script.setAttribute("repo","Sigechaishijie/Blog");
+    script.setAttribute("repo","Sigechaishijie/Blog.bak");
     script.setAttribute("issue-term","title");
     
     if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
