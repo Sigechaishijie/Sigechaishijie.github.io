@@ -1,12 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Thu, 11 Jul 2024 00:52:07 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>快速搭建出一个博客</title><link>https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</link><description># 准备工作&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Thu, 11 Jul 2024 00:58:38 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>快速搭建出一个博客</title><link>https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</link><description># 准备工作&#13;
 ## 你需要&#13;
 Watt Toolkit 加速 GitHub，软件官网：https://steampp.net/&#13;
 一双灵巧的手和一个聪明的大脑&#13;
 一个 GitHub 账户，若没有，注册即可&#13;
 # 搭建&#13;
-## 第一步：Fork仓库&#13;
-前往 Gmeek 博客框架 GitHub 仓库：https://github.com/Meekdai/Gmeek/&#13;
-点击 fork，弹出的框框里随便取一个名字，比如我就叫 Blog&#13;
-## 第二步：启用 Pages&#13;
-前往项目主页，点击 Settings -&gt; Pages -&gt; Build and deployment -&gt; Source，将选项改成 GitHub Actions。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</guid><pubDate>Thu, 11 Jul 2024 00:51:46 +0000</pubDate></item><item><title>我有博客啦</title><link>https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</link><description>这是我在博客发表的第一篇文章，大佬指教一下。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</guid><pubDate>Tue, 09 Jul 2024 11:59:11 +0000</pubDate></item></channel></rss>
+## 第一步：Fork 仓库&#13;
+前往 Gmeek 博客框架 GitHub 仓库：https://github.com/Meekdai/Gmeek/ 。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</guid><pubDate>Thu, 11 Jul 2024 00:51:46 +0000</pubDate></item><item><title>我有博客啦</title><link>https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</link><description>这是我在博客发表的第一篇文章，大佬指教一下。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</guid><pubDate>Tue, 09 Jul 2024 11:59:11 +0000</pubDate></item></channel></rss>
