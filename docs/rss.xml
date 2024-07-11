@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Thu, 11 Jul 2024 07:28:55 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Firefox 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog/post/Firefox%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Thu, 11 Jul 2024 07:29:37 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Firefox 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog/post/Firefox%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
 我先把效果放在前面了哈&#13;
 ![Firefox 垂直标签页](https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6)&#13;
 可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：不支持 CSS 主题&#13;
@@ -27,7 +27,7 @@ Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的�
 # 代码&#13;
 如果要插入一段代码并且不需要语法突出显示，则可以使用 GitHub Issues 附带的代码功能，图标为 &lt;&gt;&#13;
 如果要插入一段代码并且需要语法高亮显示，则可以输入 \``` + 语言名称，完成后输入 \```&#13;
-示例：&#13;
+示例（忽略中括号）：&#13;
 ```markdown&#13;
 [```python&#13;
 print('Hello world!')&#13;
