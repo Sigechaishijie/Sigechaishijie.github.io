@@ -9,11 +9,11 @@ Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的�
 如果要插入一段代码并且需要语法高亮显示，则可以输入 \``` + 语言名称，完成后输入 \```
 示例：
 ```markdown
-```python
+[```python
 print("Hello world!")
+```]
 ```
-```
-\=
+=
 ```python
 print("Hello world!")
 ```
