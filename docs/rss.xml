@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Thu, 11 Jul 2024 01:59:04 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>快速搭建出一个博客</title><link>https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</link><description># 准备工作&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Thu, 11 Jul 2024 03:32:01 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Markdown 速成</title><link>https://Sigechaishijie.github.io/Blog/post/Markdown%20-su-cheng.html</link><description># 简介&#13;
+Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的特性&#13;
+# 标题&#13;
+如果要编写较大的一级标题，可以使用 # + 空格，然后编写标题内容&#13;
+如果要编写稍小的二级标题，可以使用 ##  + 空格，然后编写标题内容&#13;
+如果要写最小的三级标题，可以使用 ### +空格，然后写标题内容&#13;
+# 代码&#13;
+如果要插入一段代码并且不需要语法突出显示，则可以使用 GitHub Issues 附带的代码功能，图标为 &lt;&gt;&#13;
+如果要插入一段代码并且需要语法高亮显示，则可以输入 \``` + 语言名称，完成后输入 \```&#13;
+示例：&#13;
+\```python&#13;
+print('Hello world!')&#13;
+\```&#13;
+\=&#13;
+```python&#13;
+print('Hello world!')&#13;
+```&#13;
+# 上传图片&#13;
+点击 GitHub 自带的Paste, drop, or click to add files 即可。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/Markdown%20-su-cheng.html</guid><pubDate>Thu, 11 Jul 2024 03:31:37 +0000</pubDate></item><item><title>快速搭建出一个博客</title><link>https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</link><description># 准备工作&#13;
 ## 你需要&#13;
 Watt Toolkit 加速 GitHub，软件官网：https://steampp.net/&#13;
 一双灵巧的手和一个聪明的大脑&#13;
