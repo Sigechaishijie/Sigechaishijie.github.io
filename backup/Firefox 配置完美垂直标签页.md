@@ -11,7 +11,7 @@
 # CSS 主题
 出处：卡饭论坛
 链接：bbs.kafan.cn/thread-2266989-1-1.html
-若需要不通过卡饭论坛查看，我把它搬运到了 https://Sigechaishijie.github.io/Blog/userChrome.css
+若需要不通过卡饭论坛查看，我把它搬运到了 https://Sigechaishijie.github.io/Blog/Firefox 配置完美垂直标签页/userChrome.css
 请尽量去卡饭论坛
 浏览器地址栏输入 about:config，回车进入后，搜索 toolkit.legacyUserProfileCustomizations.stylesheets，将值改为 true
 浏览器地址栏输入 about:support，回车进入后，点击打开配置文件夹，在其中新建一个 chrome 文件夹（如果没有）
