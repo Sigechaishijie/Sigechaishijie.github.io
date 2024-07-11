@@ -19,9 +19,11 @@ Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的�
 如果要插入一段代码并且不需要语法突出显示，则可以使用 GitHub Issues 附带的代码功能，图标为 <>
 如果要插入一段代码并且需要语法高亮显示，则可以输入 \``` + 语言名称，完成后输入 \```
 示例：
-\```python
+```markdown
+```python
 print('Hello world!')
-\```
+```
+```
 \=
 ```python
 print('Hello world!')
@@ -39,9 +41,11 @@ Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的�
 如果要插入一段代码并且不需要语法突出显示，则可以使用 GitHub Issues 附带的代码功能，图标为 <>
 如果要插入一段代码并且需要语法高亮显示，则可以输入 \``` + 语言名称，完成后输入 \```
 示例：
-\```python
+```markdown
+```python
 print('Hello world!')
-\```
+```
+```
 \=
 ```python
 print('Hello world!')
@@ -115,12 +119,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h1>代码</h1>
 <p>如果要插入一段代码并且不需要语法突出显示，则可以使用 GitHub Issues 附带的代码功能，图标为 &lt;&gt;<br>
 如果要插入一段代码并且需要语法高亮显示，则可以输入 ``` + 语言名称，完成后输入 ```<br>
-示例：<br>
-```python<br>
-print("Hello world!")<br>
-```<br>
-=</p>
-<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-en">print</span>(<span class="pl-s">"Hello world!"</span>)</pre></div>
+示例：</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-s">```</span><span class="pl-en">python</span>
+<span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Hello world!<span class="pl-pds">"</span></span>)</pre></div>
+<pre class="notranslate"><code class="notranslate">\=
+```python
+print("Hello world!")
+</code></pre>
 <h1>上传图片</h1>
 <p>点击 GitHub 自带的Paste, drop, or click to add files 即可</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>

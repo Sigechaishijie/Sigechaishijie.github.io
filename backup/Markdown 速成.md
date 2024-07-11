@@ -8,9 +8,11 @@ Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的�
 如果要插入一段代码并且不需要语法突出显示，则可以使用 GitHub Issues 附带的代码功能，图标为 <>
 如果要插入一段代码并且需要语法高亮显示，则可以输入 \``` + 语言名称，完成后输入 \```
 示例：
-\```python
+```markdown
+```python
 print("Hello world!")
-\```
+```
+```
 \=
 ```python
 print("Hello world!")
