@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Fri, 12 Jul 2024 06:01:20 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Chrome 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog/post/Chrome%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Fri, 12 Jul 2024 06:08:10 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Chrome 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog/post/Chrome%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
 我先把效果放在前面了哈&#13;
 ![Chrome 垂直标签页](https://github.com/user-attachments/assets/e3e9dd0d-677a-400d-9107-34f546fd6a78)&#13;
 可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：顶部的按钮变得十分的大，并且扩展栏不可随着浏览器一起启动，必须在浏览器启动后，按一次 Alt + V&#13;
@@ -27,12 +27,12 @@
 现在，重启浏览器，打开之前安装的扩展，你应该能看到你的，完美的，垂直标签页了。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/Firefox%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</guid><pubDate>Thu, 11 Jul 2024 05:50:36 +0000</pubDate></item><item><title>Markdown 速成</title><link>https://Sigechaishijie.github.io/Blog/post/Markdown%20-su-cheng.html</link><description># 简介&#13;
 Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的特性&#13;
 # 标题&#13;
-如果要编写较大的一级标题，可以使用 # + 空格，然后编写标题内容&#13;
-如果要编写稍小的二级标题，可以使用 ##  + 空格，然后编写标题内容&#13;
+如果要编写较大的一级标题，可以使用 # + 空格，然后写标题内容&#13;
+如果要编写稍小的二级标题，可以使用 ##  + 空格，然后写标题内容&#13;
 如果要写最小的三级标题，可以使用 ### +空格，然后写标题内容&#13;
 # 代码&#13;
-如果要插入一段代码并且不需要语法突出显示，则可以使用 GitHub Issues 附带的代码功能，图标为 &lt;&gt;&#13;
-如果要插入一段代码并且需要语法高亮显示，则可以输入 \``` + 语言名称，完成后输入 \```&#13;
+如果要插入一段代码并且不需要语法高亮，则可以使用 GitHub Issues 附带的代码功能，图标为 &lt;&gt;&#13;
+如果要插入一段代码并且需要语法高亮，则可以输入 \``` + 语言名称，完成后输入 \```&#13;
 示例（忽略中括号）：&#13;
 ```markdown&#13;
 [```python&#13;
