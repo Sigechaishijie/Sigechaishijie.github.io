@@ -20,7 +20,7 @@
 # 杀毒软件
 这里只推荐[火绒](https://huorong.cn/)，360个人用下来感觉太敏感，并且火绒还有屏蔽弹窗功能
 # 截图
-[Snipaste](https://snipaste.com/) 可以使你方便截图
+[Snipaste](https://snipaste.com/) 可以使你方便地截图
 # GIF
 [ScreenToGif](http://www.screentogif.com/) 可以让你将屏幕里一部分录制为GIF
 # 其他
