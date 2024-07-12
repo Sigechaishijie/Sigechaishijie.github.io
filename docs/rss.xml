@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Fri, 12 Jul 2024 10:45:43 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Windows 软件推荐</title><link>https://Sigechaishijie.github.io/Blog/post/Windows%20-ruan-jian-tui-jian.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Fri, 12 Jul 2024 10:51:39 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Windows 软件推荐</title><link>https://Sigechaishijie.github.io/Blog/post/Windows%20-ruan-jian-tui-jian.html</link><description># 前言&#13;
 其实我本来不想做这个的，因为网上已经有太多了，直到我看到我妈那个赛博养蛊的电脑……&#13;
 好了，正片开始&#13;
 # 解压缩&#13;
@@ -20,9 +20,8 @@
 2.树状标签页 如果不是那么折腾，但又想要一个垂直标签页，并且功能较为丰富，可以选用它&#13;
 3.Tab Center Reborn 它的设置选项非常少&#13;
 # CSS 主题&#13;
-出处：卡饭论坛&#13;
-链接：[https://bbs.kafan.cn/thread-2266989-1-1.html](url)&#13;
-若需要不通过卡饭论坛查看，我把它搬运到了https://Sigechaishijie.github.io/Blog/Firefox [配置完美垂直标签页/userChrome.css](url)&#13;
+出处：卡饭论坛 [链接](https://bbs.kafan.cn/thread-2266989-1-1.html)&#13;
+若需要不通过卡饭论坛查看，我把它搬运到了[https://Sigechaishijie.github.io/Blog/Firefox 配置完美垂直标签页/userChrome.css](这是一个链接)浏览器复制粘贴即可&#13;
 请尽量去卡饭论坛&#13;
 浏览器地址栏输入 about:config，回车进入后，搜索 toolkit.legacyUserProfileCustomizations.stylesheets，将值改为 true&#13;
 浏览器地址栏输入 about:support，回车进入后，点击打开配置文件夹，在其中新建一个 chrome 文件夹（如果没有）&#13;
