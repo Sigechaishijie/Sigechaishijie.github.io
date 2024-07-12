@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Fri, 12 Jul 2024 10:11:45 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Windows 软件推荐</title><link>https://Sigechaishijie.github.io/Blog/post/Windows%20-ruan-jian-tui-jian.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Fri, 12 Jul 2024 10:45:43 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Windows 软件推荐</title><link>https://Sigechaishijie.github.io/Blog/post/Windows%20-ruan-jian-tui-jian.html</link><description># 前言&#13;
 其实我本来不想做这个的，因为网上已经有太多了，直到我看到我妈那个赛博养蛊的电脑……&#13;
 好了，正片开始&#13;
 # 解压缩&#13;
@@ -48,12 +48,12 @@ print('Hello world!')&#13;
 # 上传图片&#13;
 点击 GitHub 自带的 Paste, drop, or click to add files 即可。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/Markdown%20-su-cheng.html</guid><pubDate>Thu, 11 Jul 2024 03:31:37 +0000</pubDate></item><item><title>快速搭建出一个博客</title><link>https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</link><description># 准备工作&#13;
 ## 你需要&#13;
-Watt Toolkit 加速 GitHub，软件官网：[https://steampp.net/](url)&#13;
+[Watt Toolkit](https://steampp.net/) 加速 GitHub&#13;
 一双灵巧的手和一个聪明的大脑&#13;
 一个 GitHub 账户，若没有，注册即可&#13;
 # 搭建&#13;
 ## 第一步：Fork 仓库&#13;
-前往 Gmeek 博客框架的 GitHub 仓库：[https://github.com/Meekdai/Gmeek/](url)&#13;
+前往 [Gmeek 博客框架的 GitHub 仓库](https://github.com/Meekdai/Gmeek/)&#13;
 点击 fork，弹出的框框里随便取一个名字，比如我就叫 Blog&#13;
 ## 第二步：启用 Pages&#13;
 前往项目主页，点击 Settings -&gt; Pages -&gt; Build and deployment -&gt; Source，将选项改成 GitHub Actions&#13;
@@ -61,4 +61,4 @@ Watt Toolkit 加速 GitHub，软件官网：[https://steampp.net/](url)&#13;
 你可以点击 GitHub 仓库主页中的 Issues，随后根据提示操作即可，注意，在写作完成后，至少选择一个 Label，使用 Markdown 语法写作，关于 Markdown 的使用教程，我会另外再出一个博客&#13;
 # 附录&#13;
 修改 config.json 可以达到主页自定义的目的，但是想要让修改生效，需要通过Actions -&gt; build Gmeek -&gt; Run workflow -&gt; 里面的按钮全局重新生成一次&#13;
-通过 [https://你的用户名.github.io/仓库名](url) 可以访问你的博客。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</guid><pubDate>Thu, 11 Jul 2024 00:51:46 +0000</pubDate></item><item><title>我有博客啦</title><link>https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</link><description>这是我在博客发表的第一篇文章，大佬指教一下。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</guid><pubDate>Tue, 09 Jul 2024 11:59:11 +0000</pubDate></item></channel></rss>
+通过 https://你的用户名.github.io/仓库名 可以访问你的博客。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</guid><pubDate>Thu, 11 Jul 2024 00:51:46 +0000</pubDate></item><item><title>我有博客啦</title><link>https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</link><description>这是我在博客发表的第一篇文章，大佬指教一下。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</guid><pubDate>Tue, 09 Jul 2024 11:59:11 +0000</pubDate></item></channel></rss>
