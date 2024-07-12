@@ -2,7 +2,7 @@
 其实我本来不想做这个的，因为网上已经有太多了。直到我看到我妈那个赛博养蛊的电脑……
 好了，正片开始
 # 输入法
-这里推荐[一个魔改过的搜狗输入法](https://bbs.pcbeta.com/viewthread-1859553-1-1.html)
+这里推荐[一个魔改过的搜狗输入法](https://bbs.pcbeta.com/viewthread-1859553-1-1.html)，精简去广
 # 解压缩
 解压缩软件，大家最熟悉的当然是 WinRAR。
 然鹅，广告和弹窗实在太多，解压缩速度也不尽人意。所以这里建议使用 [Bandizip](https://pan.huang1111.cn/s/A6GeZSB) + [NanaZip](https://github.com/M2Team/NanaZip)
