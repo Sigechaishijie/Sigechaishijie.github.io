@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Fri, 12 Jul 2024 05:53:16 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Chrome 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog/post/Chrome%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Fri, 12 Jul 2024 06:01:20 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Chrome 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog/post/Chrome%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
 我先把效果放在前面了哈&#13;
 ![Chrome 垂直标签页](https://github.com/user-attachments/assets/e3e9dd0d-677a-400d-9107-34f546fd6a78)&#13;
 可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：顶部的按钮变得十分的大，并且扩展栏不可随着浏览器一起启动，必须在浏览器启动后，按一次 Alt + V&#13;
@@ -44,7 +44,7 @@ print('Hello world!')&#13;
 print('Hello world!')&#13;
 ```&#13;
 # 上传图片&#13;
-点击 GitHub 自带的Paste, drop, or click to add files 即可。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/Markdown%20-su-cheng.html</guid><pubDate>Thu, 11 Jul 2024 03:31:37 +0000</pubDate></item><item><title>快速搭建出一个博客</title><link>https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</link><description># 准备工作&#13;
+点击 GitHub 自带的 Paste, drop, or click to add files 即可。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/Markdown%20-su-cheng.html</guid><pubDate>Thu, 11 Jul 2024 03:31:37 +0000</pubDate></item><item><title>快速搭建出一个博客</title><link>https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</link><description># 准备工作&#13;
 ## 你需要&#13;
 Watt Toolkit 加速 GitHub，软件官网：[https://steampp.net/](url)&#13;
 一双灵巧的手和一个聪明的大脑&#13;

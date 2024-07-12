@@ -18,4 +18,4 @@ print("Hello world!")
 print("Hello world!")
 ```
 # 上传图片
-点击 GitHub 自带的Paste, drop, or click to add files 即可
+点击 GitHub 自带的 Paste, drop, or click to add files 即可
