@@ -4,7 +4,7 @@
 # 解压缩
 解压缩软件，大家最熟悉的当然是 WinRAR。
 然鹅，广告和弹窗实在太多，解压缩速度也不尽人意。所以这里建议使用 [Bandizip](https://pan.huang1111.cn/s/A6GeZSB) + [NanaZip](https://github.com/M2Team/NanaZip)
-为什么要推荐两款呢？[Bandizip](https://pan.huang1111.cn/s/A6GeZSB) 压缩率实在太低，而 [NanaZip](https://github.com/M2Team/NanaZip) 解压缩速度又很慢，正好互补
+为什么要推荐两款呢？[Bandizip](https://pan.huang1111.cn/s/A6GeZSB) 压缩率非常低，但是解压极度迅速；而 [NanaZip](https://github.com/M2Team/NanaZip) 压缩率非常高，但是解压缩速度很慢，正好互补
 # 视频播放
 视频播放这里只推荐 [Potplayer](https://potplayer.daum.net/?lang=zh_CN)。没什么好多说的，太强大了！
 # 应用商店
