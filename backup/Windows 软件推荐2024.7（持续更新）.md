@@ -13,6 +13,8 @@
 这里不推荐用 Microsoft Store，建议使用第三方替代品 [UniGetUI](https://www.marticliment.com/unigetui/)
 # 图片查看
 不说了，[Imageglass](https://imageglass.xyz/)，用了一年了，开源又自定义性强
+# 下载器
+这里只推荐 [IDM](https://bbs.kafan.cn/thread-1862959-1-1.html)，NDM 不知道为什么我有时会闪退
 # 卸载器
 [Bulk Crap Uninstaller](https://www.bcuninstaller.com/)，批量卸载非常好用
 # 文件搜索
