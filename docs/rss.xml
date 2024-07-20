@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog</link></image><lastBuildDate>Fri, 12 Jul 2024 11:26:21 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Windows 软件推荐2024.7（持续更新）</title><link>https://Sigechaishijie.github.io/Blog/post/Windows%20-ruan-jian-tui-jian-2024.7%EF%BC%88-chi-xu-geng-xin-%EF%BC%89.html</link><description># 前言&#13;
-其实我本来不想做这个的，因为网上已经有太多了。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/Windows%20-ruan-jian-tui-jian-2024.7%EF%BC%88-chi-xu-geng-xin-%EF%BC%89.html</guid><pubDate>Fri, 12 Jul 2024 10:11:20 +0000</pubDate></item><item><title>Chrome 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog/post/Chrome%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>思哥の博客</title><link>https://Sigechaishijie.github.io/Blog-bak</link><description>我是思哥拆世界，一个我的世界兼科技区UP主</description><copyright>思哥の博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/160098482?v=4&amp;size=64</url><title>avatar</title><link>https://Sigechaishijie.github.io/Blog-bak</link></image><lastBuildDate>Sat, 20 Jul 2024 03:01:51 +0000</lastBuildDate><managingEditor>思哥の博客</managingEditor><ttl>60</ttl><webMaster>思哥の博客</webMaster><item><title>Windows 软件推荐2024.7（持续更新）</title><link>https://Sigechaishijie.github.io/Blog-bak/post/Windows%20-ruan-jian-tui-jian-2024.7%EF%BC%88-chi-xu-geng-xin-%EF%BC%89.html</link><description># 前言&#13;
+其实我本来不想做这个的，因为网上已经有太多了。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog-bak/post/Windows%20-ruan-jian-tui-jian-2024.7%EF%BC%88-chi-xu-geng-xin-%EF%BC%89.html</guid><pubDate>Fri, 12 Jul 2024 10:11:20 +0000</pubDate></item><item><title>Chrome 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog-bak/post/Chrome%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
 我先把效果放在前面了哈&#13;
 ![Chrome 垂直标签页](https://github.com/user-attachments/assets/e3e9dd0d-677a-400d-9107-34f546fd6a78)&#13;
 可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：顶部的按钮变得十分的大，并且扩展栏不可随着浏览器一起启动，必须在浏览器启动后，按一次 Alt + V&#13;
 这里我并没有使用 Chrome，而是使用了百分浏览器，不过配置过程是一样的&#13;
 # 扩展&#13;
-想要实现垂直标签页的效果，就得装一个扩展。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/Chrome%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</guid><pubDate>Fri, 12 Jul 2024 05:52:54 +0000</pubDate></item><item><title>Firefox 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog/post/Firefox%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
+想要实现垂直标签页的效果，就得装一个扩展。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog-bak/post/Chrome%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</guid><pubDate>Fri, 12 Jul 2024 05:52:54 +0000</pubDate></item><item><title>Firefox 配置完美垂直标签页</title><link>https://Sigechaishijie.github.io/Blog-bak/post/Firefox%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</link><description># 前言&#13;
 我先把效果放在前面了哈&#13;
 ![Firefox 垂直标签页](https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6)&#13;
 可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：不支持 CSS 主题&#13;
@@ -24,7 +24,7 @@
 浏览器地址栏输入 about:support，回车进入后，点击打开配置文件夹，在其中新建一个 chrome 文件夹（如果没有）&#13;
 进入此文件夹，新建一个名叫 userChrome.css 的文件，用记事本打开此文件，将在卡饭论坛中的代码复制进去，保存（如果已有，添加在最后即可）&#13;
 # 大功告成&#13;
-现在，重启浏览器，打开之前安装的扩展，你应该能看到你的，完美的，垂直标签页了。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/Firefox%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</guid><pubDate>Thu, 11 Jul 2024 05:50:36 +0000</pubDate></item><item><title>Markdown 速成</title><link>https://Sigechaishijie.github.io/Blog/post/Markdown%20-su-cheng.html</link><description># 前言&#13;
+现在，重启浏览器，打开之前安装的扩展，你应该能看到你的，完美的，垂直标签页了。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog-bak/post/Firefox%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html</guid><pubDate>Thu, 11 Jul 2024 05:50:36 +0000</pubDate></item><item><title>Markdown 速成</title><link>https://Sigechaishijie.github.io/Blog-bak/post/Markdown%20-su-cheng.html</link><description># 前言&#13;
 Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的特性&#13;
 # 标题&#13;
 如果要编写较大的一级标题，可以使用 # + 空格，然后写标题内容&#13;
@@ -42,7 +42,7 @@ print('Hello world!')&#13;
 print('Hello world!')&#13;
 ```&#13;
 # 上传图片&#13;
-点击 GitHub 自带的 Paste, drop, or click to add files 即可。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/Markdown%20-su-cheng.html</guid><pubDate>Thu, 11 Jul 2024 03:31:37 +0000</pubDate></item><item><title>快速搭建出一个博客</title><link>https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</link><description># 准备工作&#13;
+点击 GitHub 自带的 Paste, drop, or click to add files 即可。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog-bak/post/Markdown%20-su-cheng.html</guid><pubDate>Thu, 11 Jul 2024 03:31:37 +0000</pubDate></item><item><title>快速搭建出一个博客</title><link>https://Sigechaishijie.github.io/Blog-bak/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</link><description># 准备工作&#13;
 ## 你需要&#13;
 [Watt Toolkit](https://steampp.net/) 加速 GitHub&#13;
 一双灵巧的手和一个聪明的大脑&#13;
@@ -57,4 +57,4 @@ print('Hello world!')&#13;
 你可以点击 GitHub 仓库主页中的 Issues，随后根据提示操作即可，注意，在写作完成后，至少选择一个 Label，使用 Markdown 语法写作，关于 Markdown 的使用教程，我会另外再出一个博客&#13;
 # 附录&#13;
 修改 config.json 可以达到主页自定义的目的，但是想要让修改生效，需要通过Actions -&gt; build Gmeek -&gt; Run workflow -&gt; 里面的按钮全局重新生成一次&#13;
-通过 https://你的用户名.github.io/仓库名 可以访问你的博客。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</guid><pubDate>Thu, 11 Jul 2024 00:51:46 +0000</pubDate></item><item><title>我有博客啦</title><link>https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</link><description>这是我在博客发表的第一篇文章，大佬指教一下。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog/post/wo-you-bo-ke-la.html</guid><pubDate>Tue, 09 Jul 2024 11:59:11 +0000</pubDate></item></channel></rss>
+通过 https://你的用户名.github.io/仓库名 可以访问你的博客。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog-bak/post/kuai-su-da-jian-chu-yi-ge-bo-ke.html</guid><pubDate>Thu, 11 Jul 2024 00:51:46 +0000</pubDate></item><item><title>我有博客啦</title><link>https://Sigechaishijie.github.io/Blog-bak/post/wo-you-bo-ke-la.html</link><description>这是我在博客发表的第一篇文章，大佬指教一下。</description><guid isPermaLink="true">https://Sigechaishijie.github.io/Blog-bak/post/wo-you-bo-ke-la.html</guid><pubDate>Tue, 09 Jul 2024 11:59:11 +0000</pubDate></item></channel></rss>
