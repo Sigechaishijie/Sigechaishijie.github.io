@@ -33,3 +33,5 @@
 ## 其他
 [PowerToys](https://github.com/microsoft/PowerToys) 微软出品的实用小工具
 [图吧工具箱](https://www.tbtool.cn/) 最纯净的硬件工具箱
+# 后话
+本文章持续更新，有推荐的其它纯净软件也可以留言
