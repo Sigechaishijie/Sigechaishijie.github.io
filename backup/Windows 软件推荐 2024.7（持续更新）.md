@@ -1,6 +1,8 @@
 # 前言
 其实我本来不想做这个的，因为网上已经有太多了。直到我看到我妈那个赛博养蛊的电脑……
 好了，正片开始
+# 办公
+这里推荐 [一个精简过的 WPS Office](https://u9baoku.lanzoui.com/b01oj5txc)，提取码 34uw，如果要做 PPT 可以安装 [iSlide 插件](https://www.islide.cc/)。之所以不推荐 Microsoft Office，是因为它只能安装在 C 盘，不利于磁盘整洁。
 # 输入法
 这里推荐[一个魔改过的搜狗输入法](https://www.ghxi.com/sougouinput.html)，精简去广
 # 解压缩
