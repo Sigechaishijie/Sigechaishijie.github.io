@@ -3,11 +3,11 @@
 好了，正片开始
 # 软件推荐
 ## 办公
-这里推荐 [一个精简过的 WPS Office](https://u9baoku.lanzoui.com/b01oj5txc)，提取码 34uw，如果要做 PPT 可以安装 [iSlide 插件](https://www.islide.cc/)。之所以不推荐 Microsoft Office，是因为它只能安装在 C 盘，不利于磁盘整洁。
+这里推荐 [一个精简过的 WPS Office](https://u9baoku.lanzoui.com/b01oj5txc)，提取码 34uw，如果要做 PPT 可以安装 [iSlide 插件](https://www.islide.cc/)。之所以不推荐 Microsoft Office，是因为它只能安装在 C 盘，不利于磁盘整洁
 ## 输入法
 这里推荐[一个魔改过的搜狗输入法](https://www.ghxi.com/sougouinput.html)，精简去广
 ## 解压缩
-解压缩软件，大家最熟悉的当然是 WinRAR。
+解压缩软件，大家最熟悉的当然是 WinRAR
 然鹅，广告和弹窗实在太多，解压缩速度也不尽人意。所以这里建议使用 [Bandizip](https://pan.huang1111.cn/s/A6GeZSB) + [NanaZip](https://github.com/M2Team/NanaZip)
 为什么要推荐两款呢？[Bandizip](https://pan.huang1111.cn/s/A6GeZSB) 压缩率非常低，但是解压极度迅速；而 [NanaZip](https://github.com/M2Team/NanaZip) 压缩率非常高，但是解压缩速度很慢，正好互补
 ## 视频播放
