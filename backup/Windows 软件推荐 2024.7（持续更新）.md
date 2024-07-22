@@ -25,7 +25,7 @@
 ## PDF
 [UPDF](https://updf.com/)，比 Adobe DC 好用
 ## 杀毒软件
-这里只推荐[火绒](https://huorong.cn/)，360个人用下来感觉太敏感，并且火绒还有屏蔽弹窗功能
+这里只推荐[卡巴斯基](https://www.kaspersky.com.cn/)，[配置教程](https://www.bilibili.com/video/BV1yp4y1Z7jG/) 360个人用下来感觉太敏感
 ## 截图
 [Snipaste](https://snipaste.com/) 可以使你方便地截图
 ## GIF
@@ -33,5 +33,6 @@
 ## 其他
 [PowerToys](https://github.com/microsoft/PowerToys) 微软出品的实用小工具
 [图吧工具箱](https://www.tbtool.cn/) 最纯净的硬件工具箱
+[火绒小工具提取版](https://www.yeyulingfeng.com/9502.html) 装完卡巴斯基必下这个
 # 后话
 本文章持续更新，有推荐的其它纯净软件也可以留言
