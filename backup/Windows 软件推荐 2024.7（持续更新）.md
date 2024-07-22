@@ -29,7 +29,7 @@
 ## 截图
 [Snipaste](https://snipaste.com/) 可以使你方便地截图
 ## GIF
-[ScreenToGif](http://www.screentogif.com/) 可以让你将屏幕里一部分录制为GIF
+[ScreenToGif](http://www.screentogif.com/) 可以让你将屏幕里一部分录制为 GIF
 ## 其他
 [PowerToys](https://github.com/microsoft/PowerToys) 微软出品的实用小工具
 [图吧工具箱](https://www.tbtool.cn/) 最纯净的硬件工具箱
