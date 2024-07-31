@@ -3,5 +3,6 @@
     "subTitle":"我是思哥拆世界，一个我的世界兼科技区UP主",
     "avatarUrl":"https://avatars.githubusercontent.com/u/160098482?v=4&size=64",
     "singlePage":["about"],
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>",
     "GMEEK_VERSION":"last"
 }
