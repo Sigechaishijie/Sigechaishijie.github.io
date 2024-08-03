@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/160098482?v=4&size=64"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 前言
+域名，是一个网站十分重要的部分，它的作用是将复杂的 IP 地址转换为人类能记忆的文字
+蛋柿，域名大多数都是付费的，我的心里负担得起，我的钱包负担不起呀
+这就要请出我们今天的主角：公共后缀列表（Public Suffix List）了
+# 几个域名的优缺点
+申请免费域名一般有三种方法，各有优缺点
+1.EU.org
+  优点是不用手动续期，缺点是审核较慢
+2.US.KG
+  优点是不用审核，缺点是需要手动续期，并且 .kg 域名有点小众
+3.ClouDNS
+  优点是不用审核，也不用手动续期，缺点是需要纯净 IP，每创建一个子域名，也需要再填两遍名称服务器
+# 申请流程
+## 1.EU.org
+### 注册账户
+进入[官网](https://nic.eu.org/)
+![1 EU org（官网）](https://github.com/user-attachments/assets/294e39a1-2812-4dc9-aec7-7dcc7c17685c)
+可以看到非常的简洁且丑陋
+然后点击 here
+![1 EU org（注册）](https://github.com/user-attachments/assets/3e9f9c9b-59bc-4e02-9cae-c374cbe01b48)
+这里建议去[这个网站](https://www.meiguodizhi.com/uk-address)生成一个英国的虚拟地址，使用这个英国的虚拟地址，当然名字可以填自己的
+邮箱也是要填的
+电话号码填虚拟地址里生成的，传真别填了
+国家选英国
+输完验证码就会跳转到你的个人主页
+### 托管到 CloudFlare
+首先在你的账户主页点击 [New Domain](https://nic.eu.org/arf/en/domain/new/)，随后，填入你想要的地址，以 .eu.org 结尾
+注意，这个页面要留着
+然后打开 [CloudFlare 仪表盘](https://dash.cloudflare.com/)（没有账户就新注册一个），点击添加站点
+![托管到 CloudFlare](https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b)
+输入你打算注册的域名，随后，选择 Free 计划，复制两个名称服务器
+回到你注册的那个页面，将两个名称服务器填入，随后确定
+然后立即返回你的 CloudFlare 仪表盘，点击检查名称服务器更新
+这时候再回到 EU.org 注册完后显示的页面，如果这里显示 Done，你就可以静待审核了
+审核非常慢，审核通过后会往你的注册邮箱里发一封邮件，这时候再去 CloudFlare 检查名称服务器更新，成功后就可以使用你的域名了
+## 2.US.KG
+### 注册账户
+进入[官网](https://register.us.kg/)
+点击 Sign up，经过测试，国外邮箱收不了验证码，建议使用 QQ 邮箱及 163 邮箱（倒反天罡了属于是）
+电话号码和地址同样使用[上文的英国虚拟地址](https://www.meiguodizhi.com/uk-address/)，注意：电话号码按照它的格式填写，地址从小到大写，分隔用半角逗号
+注意，这电话号码和地址要保存在本地
+然后登录，验证一下 KYC，这里过的方法十分的神奇，首先我们新建一个文本文档，往里面填以下内容：
+Name：你刚才注册的名字不是全名
+E-Mail：你刚才注册的邮箱
+Phone：刚才注册的电话
+Address：刚才注册的地址
+然后把这部分记事本给截个图，网站选择 Upload KYC Document
+问你为什么注册域名？你就写 Setup a website.然后证明类型写 work ID，下面的 KYC Document 选择你刚才截的图
+然后就成功了
+### 托管到 CloudFlare
+登录，点击下面的 Domain name registration
+![2 US KG（注册）](https://github.com/user-attachments/assets/2d14ae5f-1518-483e-97e3-c02e6a612736)
+填你想要的域名，然后点击 Check
+注意，这个页面要留着
+然后打开 [CloudFlare 仪表盘](https://dash.cloudflare.com/)（没有账户就新注册一个），点击添加站点
+![托管到 CloudFlare](https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b)
+输入你打算注册的域名，随后，选择 Free 计划，复制两个名称服务器
+回到你注册的那个页面，将两个名称服务器填入，随后确定
+然后立即返回你的 CloudFlare 仪表盘，点击检查名称服务器更新，如果 504 就等几个小时重试一下
+在域名到期前的180 天内，你可以通过点击主页上的 Manage my domains 中的 Renew 来续费，同时如果你刚才 504 了，你可以点击 NS Records 来重试
+恭喜你，你已经成功注册了一个域名
+## 3.ClouDNS
+首先进入[官网](https://www.cloudns.net/)，改为中文，点击登记
+注册一个新账号，然后点击创建区域
+点击免费域名，填入你想要的名称，随后的域名后缀里选后两个中的任意一个即可，注意，如果报错，你需要购买一个纯净 IP
+然后会跳转到你的域名的管理面板，把这 4 个 NS 全部删掉
+然后打开 [CloudFlare 仪表盘](https://dash.cloudflare.com/)（没有账户就新注册一个），点击添加站点
+![托管到 CloudFlare](https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b)
+输入你打算注册的域名，随后，选择 Free 计划，复制两个名称服务器
+回到你域名的管理面板，新建一个 NS，填入你的第一个名称服务器
+随后如法炮制，填入第 2 个名称服务器
+然后立即返回你的 CloudFlare 仪表盘，点击检查名称服务器更新，如果成功就可以使用你的域名了
+注意，每创建一个子域名都需要填两遍名称服务器
+CloudFlare 选择 SSL / TSL -> 边缘证书，然后找到这两个证书，把这两个证书全部填进 ClouDNS 里面：
+首先新建一个记录，类型选择 TXT
+其次主机填 _acme-challenge
+最后将 CloudFlare 中的第一个证书名填进指向到里面
+如法炮制填入第 2 个
+# 后话
+你以为这些免费域名是子域名，其实它是公共后缀列表（Public Suffix List），享受普通域名的一切待遇与服务，同时 CloudFlare 能托管也说明了这一点（CloudFlare 不能托管子域名）。">
+<meta property="og:title" content="如何快速白嫖一个域名？三种方式全教你">
+<meta property="og:description" content="# 前言
+域名，是一个网站十分重要的部分，它的作用是将复杂的 IP 地址转换为人类能记忆的文字
+蛋柿，域名大多数都是付费的，我的心里负担得起，我的钱包负担不起呀
+这就要请出我们今天的主角：公共后缀列表（Public Suffix List）了
+# 几个域名的优缺点
+申请免费域名一般有三种方法，各有优缺点
+1.EU.org
+  优点是不用手动续期，缺点是审核较慢
+2.US.KG
+  优点是不用审核，缺点是需要手动续期，并且 .kg 域名有点小众
+3.ClouDNS
+  优点是不用审核，也不用手动续期，缺点是需要纯净 IP，每创建一个子域名，也需要再填两遍名称服务器
+# 申请流程
+## 1.EU.org
+### 注册账户
+进入[官网](https://nic.eu.org/)
+![1 EU org（官网）](https://github.com/user-attachments/assets/294e39a1-2812-4dc9-aec7-7dcc7c17685c)
+可以看到非常的简洁且丑陋
+然后点击 here
+![1 EU org（注册）](https://github.com/user-attachments/assets/3e9f9c9b-59bc-4e02-9cae-c374cbe01b48)
+这里建议去[这个网站](https://www.meiguodizhi.com/uk-address)生成一个英国的虚拟地址，使用这个英国的虚拟地址，当然名字可以填自己的
+邮箱也是要填的
+电话号码填虚拟地址里生成的，传真别填了
+国家选英国
+输完验证码就会跳转到你的个人主页
+### 托管到 CloudFlare
+首先在你的账户主页点击 [New Domain](https://nic.eu.org/arf/en/domain/new/)，随后，填入你想要的地址，以 .eu.org 结尾
+注意，这个页面要留着
+然后打开 [CloudFlare 仪表盘](https://dash.cloudflare.com/)（没有账户就新注册一个），点击添加站点
+![托管到 CloudFlare](https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b)
+输入你打算注册的域名，随后，选择 Free 计划，复制两个名称服务器
+回到你注册的那个页面，将两个名称服务器填入，随后确定
+然后立即返回你的 CloudFlare 仪表盘，点击检查名称服务器更新
+这时候再回到 EU.org 注册完后显示的页面，如果这里显示 Done，你就可以静待审核了
+审核非常慢，审核通过后会往你的注册邮箱里发一封邮件，这时候再去 CloudFlare 检查名称服务器更新，成功后就可以使用你的域名了
+## 2.US.KG
+### 注册账户
+进入[官网](https://register.us.kg/)
+点击 Sign up，经过测试，国外邮箱收不了验证码，建议使用 QQ 邮箱及 163 邮箱（倒反天罡了属于是）
+电话号码和地址同样使用[上文的英国虚拟地址](https://www.meiguodizhi.com/uk-address/)，注意：电话号码按照它的格式填写，地址从小到大写，分隔用半角逗号
+注意，这电话号码和地址要保存在本地
+然后登录，验证一下 KYC，这里过的方法十分的神奇，首先我们新建一个文本文档，往里面填以下内容：
+Name：你刚才注册的名字不是全名
+E-Mail：你刚才注册的邮箱
+Phone：刚才注册的电话
+Address：刚才注册的地址
+然后把这部分记事本给截个图，网站选择 Upload KYC Document
+问你为什么注册域名？你就写 Setup a website.然后证明类型写 work ID，下面的 KYC Document 选择你刚才截的图
+然后就成功了
+### 托管到 CloudFlare
+登录，点击下面的 Domain name registration
+![2 US KG（注册）](https://github.com/user-attachments/assets/2d14ae5f-1518-483e-97e3-c02e6a612736)
+填你想要的域名，然后点击 Check
+注意，这个页面要留着
+然后打开 [CloudFlare 仪表盘](https://dash.cloudflare.com/)（没有账户就新注册一个），点击添加站点
+![托管到 CloudFlare](https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b)
+输入你打算注册的域名，随后，选择 Free 计划，复制两个名称服务器
+回到你注册的那个页面，将两个名称服务器填入，随后确定
+然后立即返回你的 CloudFlare 仪表盘，点击检查名称服务器更新，如果 504 就等几个小时重试一下
+在域名到期前的180 天内，你可以通过点击主页上的 Manage my domains 中的 Renew 来续费，同时如果你刚才 504 了，你可以点击 NS Records 来重试
+恭喜你，你已经成功注册了一个域名
+## 3.ClouDNS
+首先进入[官网](https://www.cloudns.net/)，改为中文，点击登记
+注册一个新账号，然后点击创建区域
+点击免费域名，填入你想要的名称，随后的域名后缀里选后两个中的任意一个即可，注意，如果报错，你需要购买一个纯净 IP
+然后会跳转到你的域名的管理面板，把这 4 个 NS 全部删掉
+然后打开 [CloudFlare 仪表盘](https://dash.cloudflare.com/)（没有账户就新注册一个），点击添加站点
+![托管到 CloudFlare](https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b)
+输入你打算注册的域名，随后，选择 Free 计划，复制两个名称服务器
+回到你域名的管理面板，新建一个 NS，填入你的第一个名称服务器
+随后如法炮制，填入第 2 个名称服务器
+然后立即返回你的 CloudFlare 仪表盘，点击检查名称服务器更新，如果成功就可以使用你的域名了
+注意，每创建一个子域名都需要填两遍名称服务器
+CloudFlare 选择 SSL / TSL -> 边缘证书，然后找到这两个证书，把这两个证书全部填进 ClouDNS 里面：
+首先新建一个记录，类型选择 TXT
+其次主机填 _acme-challenge
+最后将 CloudFlare 中的第一个证书名填进指向到里面
+如法炮制填入第 2 个
+# 后话
+你以为这些免费域名是子域名，其实它是公共后缀列表（Public Suffix List），享受普通域名的一切待遇与服务，同时 CloudFlare 能托管也说明了这一点（CloudFlare 不能托管子域名）。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Sigechaishijie.github.io/post/ru-he-kuai-su-bai-piao-yi-ge-yu-ming-%EF%BC%9F-san-zhong-fang-shi-quan-jiao-ni.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/160098482?v=4&size=64">
+<title>如何快速白嫖一个域名？三种方式全教你</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">如何快速白嫖一个域名？三种方式全教你</h1>
+<div class="title-right">
+    <a href="https://Sigechaishijie.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/Sigechaishijie/Sigechaishijie.github.io/issues/12" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>前言</h1>
+<p>域名，是一个网站十分重要的部分，它的作用是将复杂的 IP 地址转换为人类能记忆的文字<br>
+蛋柿，域名大多数都是付费的，我的心里负担得起，我的钱包负担不起呀<br>
+这就要请出我们今天的主角：公共后缀列表（Public Suffix List）了</p>
+<h1>几个域名的优缺点</h1>
+<p>申请免费域名一般有三种方法，各有优缺点<br>
+1.EU.org<br>
+优点是不用手动续期，缺点是审核较慢<br>
+2.US.KG<br>
+优点是不用审核，缺点是需要手动续期，并且 .kg 域名有点小众<br>
+3.ClouDNS<br>
+优点是不用审核，也不用手动续期，缺点是需要纯净 IP，每创建一个子域名，也需要再填两遍名称服务器</p>
+<h1>申请流程</h1>
+<h2>1.EU.org</h2>
+<h3>注册账户</h3>
+<p>进入<a href="https://nic.eu.org/" rel="nofollow">官网</a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/294e39a1-2812-4dc9-aec7-7dcc7c17685c"><img src="https://github.com/user-attachments/assets/294e39a1-2812-4dc9-aec7-7dcc7c17685c" alt="1 EU org（官网）" style="max-width: 100%;"></a><br>
+可以看到非常的简洁且丑陋<br>
+然后点击 here<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/3e9f9c9b-59bc-4e02-9cae-c374cbe01b48"><img src="https://github.com/user-attachments/assets/3e9f9c9b-59bc-4e02-9cae-c374cbe01b48" alt="1 EU org（注册）" style="max-width: 100%;"></a><br>
+这里建议去<a href="https://www.meiguodizhi.com/uk-address" rel="nofollow">这个网站</a>生成一个英国的虚拟地址，使用这个英国的虚拟地址，当然名字可以填自己的<br>
+邮箱也是要填的<br>
+电话号码填虚拟地址里生成的，传真别填了<br>
+国家选英国<br>
+输完验证码就会跳转到你的个人主页</p>
+<h3>托管到 CloudFlare</h3>
+<p>首先在你的账户主页点击 <a href="https://nic.eu.org/arf/en/domain/new/" rel="nofollow">New Domain</a>，随后，填入你想要的地址，以 .eu.org 结尾<br>
+注意，这个页面要留着<br>
+然后打开 <a href="https://dash.cloudflare.com/" rel="nofollow">CloudFlare 仪表盘</a>（没有账户就新注册一个），点击添加站点<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b"><img src="https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b" alt="托管到 CloudFlare" style="max-width: 100%;"></a><br>
+输入你打算注册的域名，随后，选择 Free 计划，复制两个名称服务器<br>
+回到你注册的那个页面，将两个名称服务器填入，随后确定<br>
+然后立即返回你的 CloudFlare 仪表盘，点击检查名称服务器更新<br>
+这时候再回到 EU.org 注册完后显示的页面，如果这里显示 Done，你就可以静待审核了<br>
+审核非常慢，审核通过后会往你的注册邮箱里发一封邮件，这时候再去 CloudFlare 检查名称服务器更新，成功后就可以使用你的域名了</p>
+<h2>2.US.KG</h2>
+<h3>注册账户</h3>
+<p>进入<a href="https://register.us.kg/" rel="nofollow">官网</a><br>
+点击 Sign up，经过测试，国外邮箱收不了验证码，建议使用 QQ 邮箱及 163 邮箱（倒反天罡了属于是）<br>
+电话号码和地址同样使用<a href="https://www.meiguodizhi.com/uk-address/" rel="nofollow">上文的英国虚拟地址</a>，注意：电话号码按照它的格式填写，地址从小到大写，分隔用半角逗号<br>
+注意，这电话号码和地址要保存在本地<br>
+然后登录，验证一下 KYC，这里过的方法十分的神奇，首先我们新建一个文本文档，往里面填以下内容：<br>
+Name：你刚才注册的名字不是全名<br>
+E-Mail：你刚才注册的邮箱<br>
+Phone：刚才注册的电话<br>
+Address：刚才注册的地址<br>
+然后把这部分记事本给截个图，网站选择 Upload KYC Document<br>
+问你为什么注册域名？你就写 Setup a website.然后证明类型写 work ID，下面的 KYC Document 选择你刚才截的图<br>
+然后就成功了</p>
+<h3>托管到 CloudFlare</h3>
+<p>登录，点击下面的 Domain name registration<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/2d14ae5f-1518-483e-97e3-c02e6a612736"><img src="https://github.com/user-attachments/assets/2d14ae5f-1518-483e-97e3-c02e6a612736" alt="2 US KG（注册）" style="max-width: 100%;"></a><br>
+填你想要的域名，然后点击 Check<br>
+注意，这个页面要留着<br>
+然后打开 <a href="https://dash.cloudflare.com/" rel="nofollow">CloudFlare 仪表盘</a>（没有账户就新注册一个），点击添加站点<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b"><img src="https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b" alt="托管到 CloudFlare" style="max-width: 100%;"></a><br>
+输入你打算注册的域名，随后，选择 Free 计划，复制两个名称服务器<br>
+回到你注册的那个页面，将两个名称服务器填入，随后确定<br>
+然后立即返回你的 CloudFlare 仪表盘，点击检查名称服务器更新，如果 504 就等几个小时重试一下<br>
+在域名到期前的180 天内，你可以通过点击主页上的 Manage my domains 中的 Renew 来续费，同时如果你刚才 504 了，你可以点击 NS Records 来重试<br>
+恭喜你，你已经成功注册了一个域名</p>
+<h2>3.ClouDNS</h2>
+<p>首先进入<a href="https://www.cloudns.net/" rel="nofollow">官网</a>，改为中文，点击登记<br>
+注册一个新账号，然后点击创建区域<br>
+点击免费域名，填入你想要的名称，随后的域名后缀里选后两个中的任意一个即可，注意，如果报错，你需要购买一个纯净 IP<br>
+然后会跳转到你的域名的管理面板，把这 4 个 NS 全部删掉<br>
+然后打开 <a href="https://dash.cloudflare.com/" rel="nofollow">CloudFlare 仪表盘</a>（没有账户就新注册一个），点击添加站点<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b"><img src="https://github.com/user-attachments/assets/b5c843af-8db7-4cc2-a0f9-b3f5fe971a6b" alt="托管到 CloudFlare" style="max-width: 100%;"></a><br>
+输入你打算注册的域名，随后，选择 Free 计划，复制两个名称服务器<br>
+回到你域名的管理面板，新建一个 NS，填入你的第一个名称服务器<br>
+随后如法炮制，填入第 2 个名称服务器<br>
+然后立即返回你的 CloudFlare 仪表盘，点击检查名称服务器更新，如果成功就可以使用你的域名了<br>
+注意，每创建一个子域名都需要填两遍名称服务器<br>
+CloudFlare 选择 SSL / TSL -&gt; 边缘证书，然后找到这两个证书，把这两个证书全部填进 ClouDNS 里面：<br>
+首先新建一个记录，类型选择 TXT<br>
+其次主机填 _acme-challenge<br>
+最后将 CloudFlare 中的第一个证书名填进指向到里面<br>
+如法炮制填入第 2 个</p>
+<h1>后话</h1>
+<p>你以为这些免费域名是子域名，其实它是公共后缀列表（Public Suffix List），享受普通域名的一切待遇与服务，同时 CloudFlare 能托管也说明了这一点（CloudFlare 不能托管子域名）</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://Sigechaishijie.github.io">思哥の博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("07/09/2024"!=""){
+    var startSite=new Date("07/09/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","Sigechaishijie/Sigechaishijie.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+
+</html>
