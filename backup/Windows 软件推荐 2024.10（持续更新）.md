@@ -33,6 +33,6 @@
 ## 其他
 [PowerToys](https://github.com/microsoft/PowerToys) 微软出品的实用小工具
 [图吧工具箱](https://www.tbtool.cn/) 最纯净的硬件工具箱
-[火绒小工具提取版](https://www.yeyulingfeng.com/9502.html) 装完卡巴斯基必下这个
+[火绒小工具提取版](https://wwqn.lanzoul.com/ip6YY1ithygb) 提取码：9wuj，装完卡巴斯基必下这个
 # 后话
 本文章持续更新，有推荐的其它纯净软件也可以留言
