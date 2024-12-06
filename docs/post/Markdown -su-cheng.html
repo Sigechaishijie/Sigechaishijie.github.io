@@ -12,43 +12,15 @@
     </script>
 <meta name="description" content="# 前言
 Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的特性
-# 标题
-如果要编写较大的一级标题，可以使用 # + 空格，然后写标题内容
-如果要编写稍小的二级标题，可以使用 ##  + 空格，然后写标题内容
-如果要写最小的三级标题，可以使用 ### +空格，然后写标题内容
-# 代码
-如果要插入一段代码并且不需要语法高亮，则可以使用 GitHub Issues 附带的代码功能，图标为 <>
-如果要插入一段代码并且需要语法高亮，则可以输入 \``` + 语言名称，完成后输入 \```
-示例：
-\```python
-print('Hello world!')
-\```
-=
-```python
-print('Hello world!')
-```
-# 上传图片
-点击 GitHub 自带的 Paste, drop, or click to add files 即可。">
+段落
+
+要创建段落，请使用空行来分隔。">
 <meta property="og:title" content="Markdown 速成">
 <meta property="og:description" content="# 前言
 Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的特性
-# 标题
-如果要编写较大的一级标题，可以使用 # + 空格，然后写标题内容
-如果要编写稍小的二级标题，可以使用 ##  + 空格，然后写标题内容
-如果要写最小的三级标题，可以使用 ### +空格，然后写标题内容
-# 代码
-如果要插入一段代码并且不需要语法高亮，则可以使用 GitHub Issues 附带的代码功能，图标为 <>
-如果要插入一段代码并且需要语法高亮，则可以输入 \``` + 语言名称，完成后输入 \```
-示例：
-\```python
-print('Hello world!')
-\```
-=
-```python
-print('Hello world!')
-```
-# 上传图片
-点击 GitHub 自带的 Paste, drop, or click to add files 即可。">
+段落
+
+要创建段落，请使用空行来分隔。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://Sigechaishijie.github.io/post/Markdown%20-su-cheng.html">
 <meta property="og:image" content="https://avatars.github.com/u/160098482?v=4&size=64">
@@ -120,21 +92,233 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><h1>前言</h1>
-<p>Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的特性</p>
-<h1>标题</h1>
-<p>如果要编写较大的一级标题，可以使用 # + 空格，然后写标题内容<br>
-如果要编写稍小的二级标题，可以使用 ##  + 空格，然后写标题内容<br>
-如果要写最小的三级标题，可以使用 ### +空格，然后写标题内容</p>
-<h1>代码</h1>
-<h1>如果要插入一段代码并且不需要语法高亮，则可以使用 GitHub Issues 附带的代码功能，图标为 &lt;&gt;<br>
-如果要插入一段代码并且需要语法高亮，则可以输入 ``` + 语言名称，完成后输入 ```<br>
-示例：<br>
-```python<br>
-print("Hello world!")<br>
-```</h1>
-<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-en">print</span>(<span class="pl-s">"Hello world!"</span>)</pre></div>
-<h1>上传图片</h1>
-<p>点击 GitHub 自带的 Paste, drop, or click to add files 即可</p></div>
+<p>Gmeek 博客框架使用 Markdown 进行编写博客，并具有一些有趣的特性<br>
+段落</p>
+<p>要创建段落，请使用空行来分隔。</p>
+<p>这是一个段落。</p>
+<p>这是另一个段落。</p>
+<p>多个空格<br>
+小标题</p>
+<p>要创建小标题，在小标题文本前添加至多六个 # 符号。# 符号的数量决定了小标题的级别。</p>
+<h1>这是标题 1</h1>
+<h2>这是标题 2</h2>
+<h3>这是标题 3</h3>
+<h4>这是标题 4</h4>
+<h5>这是标题 5</h5>
+<h6>这是标题 6</h6>
+<p>这是标题 1<br>
+这是标题 2<br>
+这是标题 3<br>
+这是标题 4<br>
+这是标题 5<br>
+这是标题 6<br>
+粗体、斜体、高亮</p>
+<p>格式化文本也可以使用编辑相关的快捷键。<br>
+样式 	语法 	示例 	输出<br>
+粗体 	** ** 或 __ __ 	<strong>粗体文本</strong> 	粗体文本<br>
+斜体 	* * 或 _ _ 	<em>斜体文本</em> 	斜体文本<br>
+删除线 	~~ ~~ 	<del>删除线文本</del> 	删除线文本<br>
+高亮 	== == 	==高亮文本== 	高亮文本<br>
+粗体和嵌套斜体 	** ** 和 _ _ 	<strong>粗体和 <em>嵌套斜体</em> 文本</strong> 	粗体和 嵌套斜体 文本<br>
+粗体和斜体 	*** *** 或 ___ ___ 	<em><strong>粗体和斜体文本</strong></em> 	粗体和斜体文本</p>
+<p>如果需要将语法符号视为普通文本进行展示，需要在语法符号前加反斜杠进行转义。比如：</p>
+<p><strong>这里的加粗会真正的加粗</strong></p>
+<p>**这里的加粗不会真正的加粗**</p>
+<p><em>这里的倾斜会真正的倾斜</em></p>
+<p>*这里的倾斜不会真正的倾斜*</p>
+<p>内部链接</p>
+<p>Markdown 支持两种风格的内部链接：</p>
+<pre class="notranslate"><code class="notranslate">Wiki 链接风格：[[运动三定律]]
+Markdown 链接风格：[运动三定律](运动三定律.md)
+</code></pre>
+<p>外部链接</p>
+<p>如果要链接到外部URL，可以通过在方括号（[ ]）中填入描述链接的文本，然后在括号中（()）添加URL来创建内联链接。</p>
+<p><a href="https://blog.sigechaishijie.us.kg/" rel="nofollow">思哥の博客</a></p>
+<p>思哥の博客</p>
+<p>在链接中转义空格</p>
+<p>如果你的URL包含空格，必须用 %20 替换它们。</p>
+<p>外部图片</p>
+<p>你可以通过在外部链接前加上 ! 符号来在笔记中插入外部图片。</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067"><img src="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067" alt="Engelbart" data-canonical-src="https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg" style="max-width: 100%;"></a></p>
+<p>Engelbart</p>
+<p>你可以通过在链接的锚文本中添加 |640x480 来更改图片尺寸，其中640是宽度，480是高度。</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067"><img src="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067" alt="Engelbart|100x145" data-canonical-src="https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg" style="max-width: 100%;"></a></p>
+<p>如果只指定了宽度，图片会根据原始长宽比进行缩放。例如：</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067"><img src="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067" alt="Engelbart|100" data-canonical-src="https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg" style="max-width: 100%;"></a></p>
+<p>Tip</p>
+<p>如果要添加来自仓库内部的图片，你也可以使用嵌入图片语法。<br>
+引用</p>
+<p>你可以在文本前加上 &gt; 符号来引用文本。</p>
+<blockquote>
+<p>人类面临着越来越复杂和紧迫的问题，他们有效应对这些问题的能力对于社会的稳定和持续发展至关重要。</p>
+</blockquote>
+<p>- 道格·恩格尔巴特，1961</p>
+<pre class="notranslate"><code class="notranslate">人类面临着越来越复杂和紧迫的问题，他们有效应对这些问题的能力对于社会的稳定和持续发展至关重要。
+</code></pre>
+<ul>
+<li>道格·恩格尔巴特，1961<br>
+Tip</li>
+</ul>
+<p>你可以通过在引用中的第一行添加 [!信息] 来将引用变成标注。<br>
+列表</p>
+<p>你可以在文本前加上 -、* 或 + 来创建无序列表。</p>
+<ul>
+<li>
+<p>第一条</p>
+</li>
+<li>
+<p>第二条</p>
+</li>
+<li>
+<p>第三条</p>
+<p>第一条<br>
+第二条<br>
+第三条</p>
+</li>
+</ul>
+<p>要创建有序列表，每行以数字加上 . 开头。</p>
+<ol>
+<li>
+<p>第一条</p>
+</li>
+<li>
+<p>第二条</p>
+</li>
+<li>
+<p>第三条</p>
+<p>第一条<br>
+第二条<br>
+第三条</p>
+</li>
+</ol>
+<p>任务列表</p>
+<p>要创建任务列表，每个列表项以连字符和空格开头，后跟 [ ]。</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> 这是已完成的任务。</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> 这是未完成的任务。</p>
+<p>这是已完成的任务。<br>
+这是未完成的任务。</p>
+</li>
+</ul>
+<p>你可以在阅读视图中通过点击复选框来切换任务状态。<br>
+Tip</p>
+<p>你可以通过在括号内添加任意字符来将任务标记为已完成状态。</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> 牛奶</p>
+</li>
+<li>
+<p>[?] 鸡蛋</p>
+</li>
+<li>
+<p>[-] 鸡蛋</p>
+<p>牛奶<br>
+鸡蛋<br>
+鸡蛋</p>
+</li>
+</ul>
+<p>嵌套列表</p>
+<p>所有类型的列表都支持嵌套。</p>
+<p>要创建嵌套列表，请缩进一个或多个列表项：</p>
+<ol>
+<li>
+<p>第一条</p>
+<ol>
+<li>有序嵌套列表项</li>
+</ol>
+</li>
+<li>
+<p>第二条</p>
+<ul>
+<li>无序嵌套列表项</li>
+</ul>
+<p>第一条<br>
+有序嵌套列表项<br>
+第二条<br>
+无序嵌套列表项</p>
+</li>
+</ol>
+<p>同样，你可以通过缩进一个或多个列表项来创建嵌套任务列表：</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> 任务项 1</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> 子任务 1</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> 任务项 2</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> 子任务 1</li>
+</ul>
+<p>任务项 1<br>
+子任务 1<br>
+任务项 2<br>
+子任务 1</p>
+</li>
+</ul>
+<p>使用 Tab 或 Shift+Tab 来缩进或取消缩进一个或多个已选择的列表项，以便快速地组织列表。<br>
+水平线</p>
+<p>你可以在单独的一行上使用三个或更多星号 ***、短横线 --- 或下划线 ___ 来添加水平线。这些分隔符号里允许有空格。</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<p>代码</p>
+<p>你可以在段落里插入代码，或将其放在代码块中。<br>
+行内代码</p>
+<p>你可以使用一对反引号在句子插入代码。</p>
+<p><code class="notranslate">反引号</code>中的文本将被格式化为代码。</p>
+<p>反引号中的文本将被格式化为代码。</p>
+<p>如果要在行内代码中使用反引号，请用双反引号将其包围，比如： 这是一句内部带有<code class="notranslate">反引号</code>的代码。</p>
+<p>这是一句内部带有<code class="notranslate">反引号</code>的代码<br>
+代码块</p>
+<p>要创建一个代码块，请用三个反引号括住代码。</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c1">cd</span> <span class="pl-k">~</span>/Desktop</pre></div>
+<p>cd ~/Desktop</p>
+<p>你也可以通过使用 Tab 键或4个空格缩进文本来创建代码块。</p>
+<pre class="notranslate"><code class="notranslate">cd ~/Desktop
+</code></pre>
+<p>你可以在开头的三个反引号后添加语言名称来为代码块添加语法高亮。</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">function</span> <span class="pl-en">fancyAlert</span><span class="pl-kos">(</span><span class="pl-s1">arg</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span><span class="pl-kos">(</span><span class="pl-s1">arg</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">$</span><span class="pl-kos">.</span><span class="pl-en">facebox</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-c1">div</span>:<span class="pl-s">'#foo'</span><span class="pl-kos">}</span><span class="pl-kos">)</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre></div>
+<p>function fancyAlert(arg) {<br>
+if(arg) {<br>
+$.facebox({div:'#foo'})<br>
+}<br>
+}</p>
+<p>脚注</p>
+<p>你可以使用以下语法向笔记中添加脚注[1]：</p>
+<p>这是一个简单的脚注<sup><a href="#user-content-fn-1-4d510aabb6644dc0787ad5e1096624d7" id="user-content-fnref-1-4d510aabb6644dc0787ad5e1096624d7" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>。</p>
+<p>你也可以在句子中使用行内脚注。请注意插入符号在方括号外，将脚注内容写在方括号内。</p>
+<p>你也可以使用内联脚注。^[这是一个内联脚注。]</p>
+<p>Note</p>
+<p>行内脚注仅在阅读视图中有效，不适用于实时预览。<br>
+注释</p>
+<p>你可以用 %% 包围文本来添加注释。注释只在编辑视图中可见。</p>
+<p>这是一个 %%行内%% 注释。</p>
+<p>%%<br>
+这是一个块注释。</p>
+<p>块注释可以跨多行。<br>
+%%</p>
+<section data-footnotes="" class="footnotes"><h2 id="footnote-label" class="sr-only">Footnotes</h2>
+<ol>
+<li id="user-content-fn-1-4d510aabb6644dc0787ad5e1096624d7">
+<p>这是脚注的内容文本。 <a href="#user-content-fnref-1-4d510aabb6644dc0787ad5e1096624d7" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
