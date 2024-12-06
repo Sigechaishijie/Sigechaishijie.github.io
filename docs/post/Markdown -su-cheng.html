@@ -118,7 +118,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 粗体 	** ** 或 __ __ 	<strong>粗体文本</strong> 	粗体文本<br>
 斜体 	* * 或 _ _ 	<em>斜体文本</em> 	斜体文本<br>
 删除线 	~~ ~~ 	<del>删除线文本</del> 	删除线文本<br>
-高亮 	== == 	==高亮文本== 	高亮文本<br>
 粗体和嵌套斜体 	** ** 和 _ _ 	<strong>粗体和 <em>嵌套斜体</em> 文本</strong> 	粗体和 嵌套斜体 文本<br>
 粗体和斜体 	*** *** 或 ___ ___ 	<em><strong>粗体和斜体文本</strong></em> 	粗体和斜体文本</p>
 <p>如果需要将语法符号视为普通文本进行展示，需要在语法符号前加反斜杠进行转义。比如：</p>
@@ -127,10 +126,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><em>这里的倾斜会真正的倾斜</em></p>
 <p>*这里的倾斜不会真正的倾斜*</p>
 <p>内部链接</p>
-<p>Markdown 支持两种风格的内部链接：</p>
-<pre class="notranslate"><code class="notranslate">Wiki 链接风格：[[运动三定律]]
-Markdown 链接风格：[运动三定律](运动三定律.md)
-</code></pre>
+<p>Markdown 支持这种风格的内部链接：<br>
+<a href="%E8%BF%90%E5%8A%A8%E4%B8%89%E5%AE%9A%E5%BE%8B.md">运动三定律</a></p>
 <p>外部链接</p>
 <p>如果要链接到外部URL，可以通过在方括号（[ ]）中填入描述链接的文本，然后在括号中（()）添加URL来创建内联链接。</p>
 <p><a href="https://blog.sigechaishijie.us.kg/" rel="nofollow">思哥の博客</a></p>
@@ -140,7 +137,7 @@ Markdown 链接风格：[运动三定律](运动三定律.md)
 <p>外部图片</p>
 <p>你可以通过在外部链接前加上 ! 符号来在笔记中插入外部图片。</p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067"><img src="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067" alt="Engelbart" data-canonical-src="https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg" style="max-width: 100%;"></a></p>
-<p>Engelbart</p>
+<p>恩格尔巴特</p>
 <p>你可以通过在链接的锚文本中添加 |640x480 来更改图片尺寸，其中640是宽度，480是高度。</p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067"><img src="https://camo.githubusercontent.com/83cf56b8557b198ebe9584a701933824fff8ff1f6fd8346c97b096523a038482/68747470733a2f2f686973746f72792d636f6d70757465722e636f6d2f4d6f6465726e436f6d70757465722f42617369732f696d616765732f456e67656c626172742e6a7067" alt="Engelbart|100x145" data-canonical-src="https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg" style="max-width: 100%;"></a></p>
 <p>如果只指定了宽度，图片会根据原始长宽比进行缩放。例如：</p>
@@ -300,22 +297,15 @@ $.facebox({div:'#foo'})<br>
 }</p>
 <p>脚注</p>
 <p>你可以使用以下语法向笔记中添加脚注[1]：</p>
-<p>这是一个简单的脚注<sup><a href="#user-content-fn-1-4d510aabb6644dc0787ad5e1096624d7" id="user-content-fnref-1-4d510aabb6644dc0787ad5e1096624d7" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>。</p>
+<p>这是一个简单的脚注<sup><a href="#user-content-fn-1-ae6da7a33621fdf5f0b3ed675816291e" id="user-content-fnref-1-ae6da7a33621fdf5f0b3ed675816291e" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>。</p>
 <p>你也可以在句子中使用行内脚注。请注意插入符号在方括号外，将脚注内容写在方括号内。</p>
 <p>你也可以使用内联脚注。^[这是一个内联脚注。]</p>
 <p>Note</p>
-<p>行内脚注仅在阅读视图中有效，不适用于实时预览。<br>
-注释</p>
-<p>你可以用 %% 包围文本来添加注释。注释只在编辑视图中可见。</p>
-<p>这是一个 %%行内%% 注释。</p>
-<p>%%<br>
-这是一个块注释。</p>
-<p>块注释可以跨多行。<br>
-%%</p>
+<p>行内脚注仅在阅读视图中有效，不适用于实时预览。</p>
 <section data-footnotes="" class="footnotes"><h2 id="footnote-label" class="sr-only">Footnotes</h2>
 <ol>
-<li id="user-content-fn-1-4d510aabb6644dc0787ad5e1096624d7">
-<p>这是脚注的内容文本。 <a href="#user-content-fnref-1-4d510aabb6644dc0787ad5e1096624d7" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+<li id="user-content-fn-1-ae6da7a33621fdf5f0b3ed675816291e">
+<p>这是脚注的内容文本。 <a href="#user-content-fnref-1-ae6da7a33621fdf5f0b3ed675816291e" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
 </li>
 </ol>
 </section></div>
