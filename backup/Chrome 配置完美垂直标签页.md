@@ -8,7 +8,7 @@
 不过，考虑大陆上 Chrome 应用商店可能有点刑，让生活越来越有判头，因此给出[一个 CRX 搜搜的第三方扩展商店](https://www.crxsoso.com/webstore/detail/akahnknmcbmgodngfjcflnaljdbhnlfo)
 # 隐藏水平标签页
 要隐藏水平标签页，我们需要启用两个实验性功能
-浏览器地址栏输入 chrome://flag，回车进入
+浏览器地址栏输入 chrome://flag 回车进入
 搜索 Touch UI Layout，启用
 搜索 WebUI tab strip，启用
 # 大功告成
