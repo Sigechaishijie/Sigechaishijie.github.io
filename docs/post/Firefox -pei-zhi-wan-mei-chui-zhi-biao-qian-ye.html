@@ -11,41 +11,195 @@
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
 <meta name="description" content="# 前言
-我先把效果放在前面了哈
-![Firefox 垂直标签页](https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6)
-可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：不支持 CSS 主题
+我先把效果放在前面了哈  
+[![Firefox 垂直标签页](https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6)](https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6)  
+可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：不支持 CSS 主题  
 由于隐藏掉原本的垂直标签页，虽然非常美观，但是这是用 CSS 主题实现的，要实现就得覆盖掉原有的 userChrome.css
 # 扩展
-要拥有垂直标签页，首先我们需要装一个扩展，以下扩展三选一即可
-1.Sidebery 这是我个人最推荐的一个扩展，它可玩性非常高，设置选项丰富
-2.树状标签页 如果不是那么折腾，但又想要一个垂直标签页，并且功能较为丰富，可以选用它
+要拥有垂直标签页，首先我们需要装一个扩展，以下扩展三选一即可  
+1.Sidebery 这是我个人最推荐的一个扩展，它可玩性非常高，设置选项丰富  
+2.树状标签页 如果不是那么折腾，但又想要一个垂直标签页，并且功能较为丰富，可以选用它  
 3.Tab Center Reborn 它的设置选项非常少
 # CSS 主题
-出处：卡饭论坛 [链接](https://bbs.kafan.cn/thread-2266989-1-1.html)
-若需要不通过卡饭论坛查看，我把它搬运到了[https://Sigechaishijie.github.io/Sige-Blog/Firefox 配置完美垂直标签页/userChrome.css](这是一个链接) 浏览器复制粘贴即可
-请尽量去卡饭论坛
-浏览器地址栏输入 about:config，回车进入后，搜索 toolkit.legacyUserProfileCustomizations.stylesheets，将值改为 true
-浏览器地址栏输入 about:support，回车进入后，点击打开配置文件夹，在其中新建一个 chrome 文件夹（如果没有）
+出处：卡饭论坛 [链接](https://bbs.kafan.cn/thread-2266989-1-1.html)  
+若需要不通过卡饭论坛查看，下面是代码：
+```js
+@-moz-document url('chrome://browser/content/browser.xhtml') {
+
+  :root:has(#browser > #sidebar-box:is([sidebarcommand='treestyletab_piro_sakura_ne_jp-sidebar-action'],
+      [sidebarcommand='_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action'], [sidebarcommand='tabcenter-reborn_ariasuni-sidebar-action'], [sidebarcommand='treetabs_jagiello_it-sidebar-action'], [sidebarcommand='_8d808887-ed13-4931-9f5a-4c0bff979a5a_-sidebar-action'], [sidebarcommand='sidebartabs_asamuzak_jp-sidebar-action'], [sidebarcommand='_f463182b-f93b-4b6d-9a68-b5e9d6d0fd40_-sidebar-action']):not([hidden='true'])) {
+	--uc-control-width: 136.5px;
+    /** 默认模式控制按钮高度 */
+    --uc-control-height: 40px;
+
+    &[uidensity='compact'] {
+      /** 紧凑模式控制按钮高度 */
+      --uc-control-height: 34px;
+    }
+
+    &[uidensity='touch'] {
+      /** 触控模式控制按钮高度 */
+      --uc-control-height: 44px;
+    }
+
+    #navigator-toolbox {
+      position: relative;
+    }
+
+    &[tabsintitlebar] {
+      #titlebar:has(#toolbar-menubar[inactive='true']) {
+        height: 0;
+
+        .titlebar-buttonbox-container {
+          background-color: var(--toolbar-bgcolor);
+        }
+      }
+
+      #titlebar {
+        height: calc(12px + 2 * var(--toolbarbutton-inner-padding));
+      }
+
+      .titlebar-buttonbox-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @media (-moz-bool-pref: 'layout.css.osx-font-smoothing.enabled') {
+          right: unset;
+          left: 0;
+        }
+      }
+    }
+
+    #TabsToolbar {
+      --tabs-navbar-shadow-size: 0px;
+
+      &>*:not(.titlebar-buttonbox-container) {
+        display: none;
+      }
+
+      .titlebar-buttonbox-container {
+        height: var(--uc-control-height, calc(12px + 2 * var(--toolbarbutton-inner-padding)));
+      }
+    }
+
+    /** 菜单栏未激活时，在菜单栏里的控制按钮就不显示，不然控制按钮重叠显示 */
+    #toolbar-menubar[inactive='true'] .titlebar-buttonbox-container {
+      display: none !important;
+    }
+
+    #navigator-toolbox:has(#toolbar-menubar[inactive='true']) {
+      >#nav-bar {
+        margin-inline: 0 var(--uc-control-width);
+
+        @media (-moz-bool-pref: 'layout.css.osx-font-smoothing.enabled') {
+          margin-inline: var(--uc-control-width) 0;
+        }
+      }
+    }
+  }
+}
+```
+请尽量去卡饭论坛  
+浏览器地址栏输入 about:config 回车进入后，搜索 toolkit.legacyUserProfileCustomizations.stylesheets，将值改为 true  
+浏览器地址栏输入 about:support 回车进入后，点击打开配置文件夹，在其中新建一个 chrome 文件夹（如果没有）  
 进入此文件夹，新建一个名叫 userChrome.css 的文件，用记事本打开此文件，将在卡饭论坛中的代码复制进去，保存（如果已有，添加在最后即可）
 # 大功告成
 现在，重启浏览器，打开之前安装的扩展，你应该能看到你的，完美的，垂直标签页了。">
 <meta property="og:title" content="Firefox 配置完美垂直标签页">
 <meta property="og:description" content="# 前言
-我先把效果放在前面了哈
-![Firefox 垂直标签页](https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6)
-可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：不支持 CSS 主题
+我先把效果放在前面了哈  
+[![Firefox 垂直标签页](https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6)](https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6)  
+可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：不支持 CSS 主题  
 由于隐藏掉原本的垂直标签页，虽然非常美观，但是这是用 CSS 主题实现的，要实现就得覆盖掉原有的 userChrome.css
 # 扩展
-要拥有垂直标签页，首先我们需要装一个扩展，以下扩展三选一即可
-1.Sidebery 这是我个人最推荐的一个扩展，它可玩性非常高，设置选项丰富
-2.树状标签页 如果不是那么折腾，但又想要一个垂直标签页，并且功能较为丰富，可以选用它
+要拥有垂直标签页，首先我们需要装一个扩展，以下扩展三选一即可  
+1.Sidebery 这是我个人最推荐的一个扩展，它可玩性非常高，设置选项丰富  
+2.树状标签页 如果不是那么折腾，但又想要一个垂直标签页，并且功能较为丰富，可以选用它  
 3.Tab Center Reborn 它的设置选项非常少
 # CSS 主题
-出处：卡饭论坛 [链接](https://bbs.kafan.cn/thread-2266989-1-1.html)
-若需要不通过卡饭论坛查看，我把它搬运到了[https://Sigechaishijie.github.io/Sige-Blog/Firefox 配置完美垂直标签页/userChrome.css](这是一个链接) 浏览器复制粘贴即可
-请尽量去卡饭论坛
-浏览器地址栏输入 about:config，回车进入后，搜索 toolkit.legacyUserProfileCustomizations.stylesheets，将值改为 true
-浏览器地址栏输入 about:support，回车进入后，点击打开配置文件夹，在其中新建一个 chrome 文件夹（如果没有）
+出处：卡饭论坛 [链接](https://bbs.kafan.cn/thread-2266989-1-1.html)  
+若需要不通过卡饭论坛查看，下面是代码：
+```js
+@-moz-document url('chrome://browser/content/browser.xhtml') {
+
+  :root:has(#browser > #sidebar-box:is([sidebarcommand='treestyletab_piro_sakura_ne_jp-sidebar-action'],
+      [sidebarcommand='_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action'], [sidebarcommand='tabcenter-reborn_ariasuni-sidebar-action'], [sidebarcommand='treetabs_jagiello_it-sidebar-action'], [sidebarcommand='_8d808887-ed13-4931-9f5a-4c0bff979a5a_-sidebar-action'], [sidebarcommand='sidebartabs_asamuzak_jp-sidebar-action'], [sidebarcommand='_f463182b-f93b-4b6d-9a68-b5e9d6d0fd40_-sidebar-action']):not([hidden='true'])) {
+	--uc-control-width: 136.5px;
+    /** 默认模式控制按钮高度 */
+    --uc-control-height: 40px;
+
+    &[uidensity='compact'] {
+      /** 紧凑模式控制按钮高度 */
+      --uc-control-height: 34px;
+    }
+
+    &[uidensity='touch'] {
+      /** 触控模式控制按钮高度 */
+      --uc-control-height: 44px;
+    }
+
+    #navigator-toolbox {
+      position: relative;
+    }
+
+    &[tabsintitlebar] {
+      #titlebar:has(#toolbar-menubar[inactive='true']) {
+        height: 0;
+
+        .titlebar-buttonbox-container {
+          background-color: var(--toolbar-bgcolor);
+        }
+      }
+
+      #titlebar {
+        height: calc(12px + 2 * var(--toolbarbutton-inner-padding));
+      }
+
+      .titlebar-buttonbox-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @media (-moz-bool-pref: 'layout.css.osx-font-smoothing.enabled') {
+          right: unset;
+          left: 0;
+        }
+      }
+    }
+
+    #TabsToolbar {
+      --tabs-navbar-shadow-size: 0px;
+
+      &>*:not(.titlebar-buttonbox-container) {
+        display: none;
+      }
+
+      .titlebar-buttonbox-container {
+        height: var(--uc-control-height, calc(12px + 2 * var(--toolbarbutton-inner-padding)));
+      }
+    }
+
+    /** 菜单栏未激活时，在菜单栏里的控制按钮就不显示，不然控制按钮重叠显示 */
+    #toolbar-menubar[inactive='true'] .titlebar-buttonbox-container {
+      display: none !important;
+    }
+
+    #navigator-toolbox:has(#toolbar-menubar[inactive='true']) {
+      >#nav-bar {
+        margin-inline: 0 var(--uc-control-width);
+
+        @media (-moz-bool-pref: 'layout.css.osx-font-smoothing.enabled') {
+          margin-inline: var(--uc-control-width) 0;
+        }
+      }
+    }
+  }
+}
+```
+请尽量去卡饭论坛  
+浏览器地址栏输入 about:config 回车进入后，搜索 toolkit.legacyUserProfileCustomizations.stylesheets，将值改为 true  
+浏览器地址栏输入 about:support 回车进入后，点击打开配置文件夹，在其中新建一个 chrome 文件夹（如果没有）  
 进入此文件夹，新建一个名叫 userChrome.css 的文件，用记事本打开此文件，将在卡饭论坛中的代码复制进去，保存（如果已有，添加在最后即可）
 # 大功告成
 现在，重启浏览器，打开之前安装的扩展，你应该能看到你的，完美的，垂直标签页了。">
@@ -53,7 +207,7 @@
 <meta property="og:url" content="https://Sigechaishijie.github.io/post/Firefox%20-pei-zhi-wan-mei-chui-zhi-biao-qian-ye.html">
 <meta property="og:image" content="https://avatars.github.com/u/160098482?v=4&size=64">
 <title>Firefox 配置完美垂直标签页</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -77,7 +231,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     body {padding: 8px;}
     .postTitle{font-size:24px;}
 }
-
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
 </style>
 
 
@@ -111,7 +275,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="content">
 <div class="markdown-body" id="postBody"><h1>前言</h1>
 <p>我先把效果放在前面了哈<br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6"><img src="https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6" alt="Firefox 垂直标签页" style="max-width: 100%;"></a><br>
+<a href="https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6"><img src="https://github.com/Sigechaishijie/Blog/assets/160098482/c36d169d-0328-4c0a-bdd7-bb61f69abaa6" alt="Firefox 垂直标签页" style="max-width: 100%;"></a><br>
 可以看到这里我配置了非常完美的垂直标签页，并且隐藏掉了原本的水平标签页，先说一下这个方案的缺点：不支持 CSS 主题<br>
 由于隐藏掉原本的垂直标签页，虽然非常美观，但是这是用 CSS 主题实现的，要实现就得覆盖掉原有的 userChrome.css</p>
 <h1>扩展</h1>
@@ -121,10 +285,85 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 3.Tab Center Reborn 它的设置选项非常少</p>
 <h1>CSS 主题</h1>
 <p>出处：卡饭论坛 <a href="https://bbs.kafan.cn/thread-2266989-1-1.html" rel="nofollow">链接</a><br>
-若需要不通过卡饭论坛查看，我把它搬运到了<a href="%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E9%93%BE%E6%8E%A5">https://Sigechaishijie.github.io/Sige-Blog/Firefox 配置完美垂直标签页/userChrome.css</a> 浏览器复制粘贴即可<br>
-请尽量去卡饭论坛<br>
-浏览器地址栏输入 about:config，回车进入后，搜索 toolkit.legacyUserProfileCustomizations.stylesheets，将值改为 true<br>
-浏览器地址栏输入 about:support，回车进入后，点击打开配置文件夹，在其中新建一个 chrome 文件夹（如果没有）<br>
+若需要不通过卡饭论坛查看，下面是代码：</p>
+<div class="highlight highlight-source-js"><pre class="notranslate">@<span class="pl-c1">-</span><span class="pl-s1">moz</span><span class="pl-c1">-</span><span class="pl-smi">document</span> <span class="pl-s1">url</span><span class="pl-kos">(</span><span class="pl-s">"chrome://browser/content/browser.xhtml"</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+
+  :<span class="pl-s1">root</span>:<span class="pl-s1">has</span><span class="pl-kos">(</span>#browser <span class="pl-c1">&gt;</span> #sidebar<span class="pl-c1">-</span><span class="pl-en">box</span>:<span class="pl-s1">is</span><span class="pl-kos">(</span><span class="pl-kos">[</span><span class="pl-s1">sidebarcommand</span><span class="pl-c1">=</span><span class="pl-s">"treestyletab_piro_sakura_ne_jp-sidebar-action"</span><span class="pl-kos">]</span><span class="pl-kos">,</span>
+      <span class="pl-kos">[</span><span class="pl-s1">sidebarcommand</span><span class="pl-c1">=</span><span class="pl-s">"_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">sidebarcommand</span><span class="pl-c1">=</span><span class="pl-s">"tabcenter-reborn_ariasuni-sidebar-action"</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">sidebarcommand</span><span class="pl-c1">=</span><span class="pl-s">"treetabs_jagiello_it-sidebar-action"</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">sidebarcommand</span><span class="pl-c1">=</span><span class="pl-s">"_8d808887-ed13-4931-9f5a-4c0bff979a5a_-sidebar-action"</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">sidebarcommand</span><span class="pl-c1">=</span><span class="pl-s">"sidebartabs_asamuzak_jp-sidebar-action"</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">sidebarcommand</span><span class="pl-c1">=</span><span class="pl-s">"_f463182b-f93b-4b6d-9a68-b5e9d6d0fd40_-sidebar-action"</span><span class="pl-kos">]</span><span class="pl-kos">)</span>:<span class="pl-s1">not</span><span class="pl-kos">(</span><span class="pl-kos">[</span><span class="pl-s1">hidden</span><span class="pl-c1">=</span><span class="pl-s">"true"</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+	<span class="pl-c1">--</span><span class="pl-s1">uc</span><span class="pl-c1">-</span><span class="pl-s1">control</span><span class="pl-c1">-</span><span class="pl-s1">width</span>: <span class="pl-c1">136.5</span><span class="pl-s1">px</span><span class="pl-kos">;</span>
+    <span class="pl-c">/** 默认模式控制按钮高度 */</span>
+    <span class="pl-c1">--</span><span class="pl-s1">uc</span><span class="pl-c1">-</span><span class="pl-s1">control</span><span class="pl-c1">-</span><span class="pl-s1">height</span>: <span class="pl-c1">40</span><span class="pl-s1">px</span><span class="pl-kos">;</span>
+
+    <span class="pl-c1">&amp;</span><span class="pl-kos">[</span><span class="pl-s1">uidensity</span><span class="pl-c1">=</span><span class="pl-s">"compact"</span><span class="pl-kos">]</span> <span class="pl-kos">{</span>
+      <span class="pl-c">/** 紧凑模式控制按钮高度 */</span>
+      <span class="pl-c1">--</span><span class="pl-s1">uc</span><span class="pl-c1">-</span><span class="pl-s1">control</span><span class="pl-c1">-</span><span class="pl-s1">height</span>: <span class="pl-c1">34</span><span class="pl-s1">px</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+
+    <span class="pl-c1">&amp;</span><span class="pl-kos">[</span><span class="pl-s1">uidensity</span><span class="pl-c1">=</span><span class="pl-s">"touch"</span><span class="pl-kos">]</span> <span class="pl-kos">{</span>
+      <span class="pl-c">/** 触控模式控制按钮高度 */</span>
+      <span class="pl-c1">--</span><span class="pl-s1">uc</span><span class="pl-c1">-</span><span class="pl-s1">control</span><span class="pl-c1">-</span><span class="pl-s1">height</span>: <span class="pl-c1">44</span><span class="pl-s1">px</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+
+    #navigator<span class="pl-c1">-</span><span class="pl-s1">toolbox</span><span class="pl-kos"></span> <span class="pl-kos">{</span>
+      position: <span class="pl-s1">relative</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+
+    <span class="pl-c1">&amp;</span><span class="pl-kos">[</span><span class="pl-s1">tabsintitlebar</span><span class="pl-kos">]</span><span class="pl-kos"></span> <span class="pl-kos">{</span>
+      #titlebar:<span class="pl-en">has</span><span class="pl-kos">(</span>#toolbar<span class="pl-c1">-</span><span class="pl-s1">menubar</span><span class="pl-kos">[</span><span class="pl-s1">inactive</span><span class="pl-c1">=</span><span class="pl-s">"true"</span><span class="pl-kos">]</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-c1">height</span>: <span class="pl-c1">0</span><span class="pl-kos">;</span>
+
+        <span class="pl-kos">.</span><span class="pl-c1">titlebar</span><span class="pl-c1">-</span><span class="pl-s1">buttonbox</span><span class="pl-c1">-</span><span class="pl-s1">container</span> <span class="pl-kos">{</span>
+          <span class="pl-s1">background</span><span class="pl-c1">-</span><span class="pl-s1">color</span>: <span class="pl-k">var</span><span class="pl-kos">(</span><span class="pl-c1">--</span><span class="pl-s1">toolbar</span><span class="pl-c1">-</span><span class="pl-s1">bgcolor</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+      <span class="pl-kos">}</span>
+
+      #titlebar <span class="pl-kos">{</span>
+        height: <span class="pl-en">calc</span><span class="pl-kos">(</span><span class="pl-c1">12</span><span class="pl-s1">px</span> <span class="pl-c1">+</span> <span class="pl-c1">2</span> <span class="pl-c1">*</span> <span class="pl-en">var</span><span class="pl-kos">(</span><span class="pl-c1">--</span><span class="pl-s1">toolbarbutton</span><span class="pl-c1">-</span><span class="pl-s1">inner</span><span class="pl-c1">-</span><span class="pl-s1">padding</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-kos">}</span>
+
+      <span class="pl-kos">.</span><span class="pl-s1">titlebar</span><span class="pl-c1">-</span><span class="pl-s1">buttonbox</span><span class="pl-c1">-</span><span class="pl-s1">container</span><span class="pl-kos"></span> <span class="pl-kos">{</span>
+        position: <span class="pl-s1">absolute</span><span class="pl-kos">;</span>
+        top: <span class="pl-c1">0</span><span class="pl-kos">;</span>
+        right: <span class="pl-c1">0</span><span class="pl-kos">;</span>
+
+        @<span class="pl-en">media</span> <span class="pl-kos">(</span><span class="pl-c1">-</span><span class="pl-s1">moz</span><span class="pl-c1">-</span><span class="pl-s1">bool</span><span class="pl-c1">-</span><span class="pl-s1">pref</span>: <span class="pl-s">"layout.css.osx-font-smoothing.enabled"</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+          right: <span class="pl-s1">unset</span><span class="pl-kos">;</span>
+          left: <span class="pl-c1">0</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+      <span class="pl-kos">}</span>
+    <span class="pl-kos">}</span>
+
+    #TabsToolbar <span class="pl-kos">{</span>
+      <span class="pl-c1">--</span><span class="pl-s1">tabs</span><span class="pl-c1">-</span><span class="pl-s1">navbar</span><span class="pl-c1">-</span><span class="pl-s1">shadow</span><span class="pl-c1">-</span><span class="pl-s1">size</span>: <span class="pl-c1">0</span><span class="pl-s1">px</span><span class="pl-kos">;</span>
+
+      <span class="pl-c1">&amp;</span><span class="pl-c1">&gt;</span><span class="pl-c1">*</span>:<span class="pl-en">not</span><span class="pl-kos">(</span><span class="pl-kos">.</span><span class="pl-s1">titlebar</span><span class="pl-c1">-</span><span class="pl-s1">buttonbox</span><span class="pl-c1">-</span><span class="pl-s1">container</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        display: <span class="pl-s1">none</span><span class="pl-kos">;</span>
+      <span class="pl-kos">}</span>
+
+      <span class="pl-kos">.</span><span class="pl-s1">titlebar</span><span class="pl-c1">-</span><span class="pl-s1">buttonbox</span><span class="pl-c1">-</span><span class="pl-s1">container</span> <span class="pl-kos">{</span>
+        <span class="pl-c1">height</span>: <span class="pl-en">var</span><span class="pl-kos">(</span><span class="pl-c1">--</span><span class="pl-s1">uc</span><span class="pl-c1">-</span><span class="pl-s1">control</span><span class="pl-c1">-</span><span class="pl-s1">height</span><span class="pl-kos">,</span> <span class="pl-en">calc</span><span class="pl-kos">(</span><span class="pl-c1">12</span><span class="pl-s1">px</span> <span class="pl-c1">+</span> <span class="pl-c1">2</span> <span class="pl-c1">*</span> <span class="pl-en">var</span><span class="pl-kos">(</span><span class="pl-c1">--</span><span class="pl-s1">toolbarbutton</span><span class="pl-c1">-</span><span class="pl-s1">inner</span><span class="pl-c1">-</span><span class="pl-s1">padding</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+      <span class="pl-kos">}</span>
+    <span class="pl-kos">}</span>
+
+    <span class="pl-c">/** 菜单栏未激活时，在菜单栏里的控制按钮就不显示，不然控制按钮重叠显示 */</span>
+    #toolbar<span class="pl-c1">-</span><span class="pl-s1">menubar</span><span class="pl-kos">[</span><span class="pl-s1">inactive</span><span class="pl-c1">=</span><span class="pl-s">"true"</span><span class="pl-kos">]</span> <span class="pl-kos">.</span><span class="pl-c1">titlebar</span><span class="pl-c1">-</span><span class="pl-s1">buttonbox</span><span class="pl-c1">-</span><span class="pl-s1">container</span> <span class="pl-kos">{</span>
+      <span class="pl-c1">display</span>: <span class="pl-s1">none</span> <span class="pl-c1">!</span><span class="pl-s1">important</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+
+    #navigator<span class="pl-c1">-</span>toolbox:<span class="pl-en">has</span><span class="pl-kos">(</span>#toolbar<span class="pl-c1">-</span><span class="pl-s1">menubar</span><span class="pl-kos">[</span><span class="pl-s1">inactive</span><span class="pl-c1">=</span><span class="pl-s">"true"</span><span class="pl-kos">]</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+      <span class="pl-c1">&gt;</span>#nav<span class="pl-c1">-</span><span class="pl-s1">bar</span><span class="pl-kos"></span> <span class="pl-kos">{</span>
+        <span class="pl-s1">margin</span><span class="pl-c1">-</span><span class="pl-en">inline</span>: <span class="pl-c1">0</span> <span class="pl-k">var</span><span class="pl-kos">(</span><span class="pl-c1">--</span><span class="pl-s1">uc</span><span class="pl-c1">-</span><span class="pl-s1">control</span><span class="pl-c1">-</span><span class="pl-s1">width</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+        @<span class="pl-en">media</span> <span class="pl-kos">(</span><span class="pl-c1">-</span><span class="pl-s1">moz</span><span class="pl-c1">-</span><span class="pl-s1">bool</span><span class="pl-c1">-</span><span class="pl-s1">pref</span>: <span class="pl-s">"layout.css.osx-font-smoothing.enabled"</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+          <span class="pl-s1">margin</span><span class="pl-c1">-</span><span class="pl-en">inline</span>: <span class="pl-k">var</span><span class="pl-kos">(</span><span class="pl-c1">--</span><span class="pl-s1">uc</span><span class="pl-c1">-</span><span class="pl-s1">control</span><span class="pl-c1">-</span><span class="pl-s1">width</span><span class="pl-kos">)</span><span class="pl-kos"></span> <span class="pl-c1">0</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+      <span class="pl-kos">}</span>
+    <span class="pl-kos">}</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre></div>
+<p>请尽量去卡饭论坛<br>
+浏览器地址栏输入 about:config 回车进入后，搜索 toolkit.legacyUserProfileCustomizations.stylesheets，将值改为 true<br>
+浏览器地址栏输入 about:support 回车进入后，点击打开配置文件夹，在其中新建一个 chrome 文件夹（如果没有）<br>
 进入此文件夹，新建一个名叫 userChrome.css 的文件，用记事本打开此文件，将在卡饭论坛中的代码复制进去，保存（如果已有，添加在最后即可）</p>
 <h1>大功告成</h1>
 <p>现在，重启浏览器，打开之前安装的扩展，你应该能看到你的，完美的，垂直标签页了</p></div>
@@ -152,7 +391,7 @@ if("07/09/2024"!=""){
 </script></div>
 </body>
 <script>
-var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
 var utterancesLoad=0;
 
 let themeSettings={
@@ -225,7 +464,70 @@ function iFrameLoading(){
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
 
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
 
 </script>
 <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script><script src='https://blog.sigechaishijie.us.kg/assets/Sige-theme_index.js></script><script src='https://blog.sigechaisjie.us.kg/assets/esay_copy.js'></script>
